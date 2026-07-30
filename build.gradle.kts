@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("com.gradleup.shadow") version "8.3.0"
 }
 
 group = "pl.cytruscode"
@@ -18,6 +19,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
+    implementation("net.kyori:adventure-text-minimessage:5.2.0")
 }
 
 tasks.test {

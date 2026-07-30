@@ -1,8 +1,22 @@
 package pl.cytruscode;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.md_5.bungee.api.ChatColor;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class TextUtils {
-    public static String colorize(String msg){
-        return ChatColor.of(msg).toString();
+    public static Component deserialize(String msg){
+        MiniMessage mm = MiniMessage.miniMessage();
+        return mm.deserialize(msg);
+    }
+    public static List<Component> deserialize(List<String> msg){
+        List<Component> serializedList = new ArrayList<>();
+        for (String msgElement : msg){
+            serializedList.add(deserialize(msgElement));
+        }
+        return serializedList;
     }
 }
