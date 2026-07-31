@@ -1,10 +1,11 @@
 plugins {
     id("java")
     id("com.gradleup.shadow") version "8.3.0"
+    id ("maven-publish")
 }
 
 group = "pl.cytruscode"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -24,4 +25,15 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "pl.cytruscode"
+            artifactId = "ccUtilities"
+            version = "1.0.0"
+
+            from(components["java"])
+        }
+    }
 }
