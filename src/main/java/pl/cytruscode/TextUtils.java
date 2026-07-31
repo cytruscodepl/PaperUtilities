@@ -2,7 +2,6 @@ package pl.cytruscode;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.md_5.bungee.api.ChatColor;
 
 import java.util.ArrayList;
 import java.util.List;

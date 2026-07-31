@@ -1,4 +1,4 @@
-package pl.cytruscode;
+package pl.cytruscode.player;
 
 
 import org.bukkit.inventory.Inventory;
