@@ -10,5 +10,8 @@ public class TimeUtils {
     public static long remaining(Long targetEpoch){
         return targetEpoch - System.currentTimeMillis();
     }
+    public static LocalDateTime addDuration(LocalDateTime baseTime, Duration duration){
+        return baseTime.plus(duration);
+    }
 
 }
