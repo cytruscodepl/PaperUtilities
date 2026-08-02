@@ -12,7 +12,7 @@ repositories {
     maven { url "https://repo.poldekdev.pw/repository/cytruscode-indev/"}
 }
 dependencies {
-    implementation 'pl.cytruscode:ccUtilities:1.0.1-build1'
+    implementation 'pl.cytruscode:ccUtilities:latest'
 }
 ```
 ### Maven
@@ -27,7 +27,7 @@ dependencies {
     <dependency>
         <groupId>pl.cytruscode</groupId>
         <artifactId>ccUtilities</artifactId>
-        <version>1.0.1-build1</version>
+        <version>latest</version>
     </dependency>
 </dependencies>
 ```
