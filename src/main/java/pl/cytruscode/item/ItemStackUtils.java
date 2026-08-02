@@ -25,8 +25,8 @@ public class ItemStackUtils {
     }
     public static ItemStack repair(ItemStack itemStack){
         ItemMeta im = itemStack.getItemMeta();
-        if (im instanceof Damageable damageable){
-            damageable.setDamage(0);
+        if (im instanceof Damageable){
+            ((Damageable) im).setDamage(0);
         }
         itemStack.setItemMeta(im);
         return itemStack;
