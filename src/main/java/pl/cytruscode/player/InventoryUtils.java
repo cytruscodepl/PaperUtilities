@@ -21,4 +21,12 @@ public class InventoryUtils {
             }
         }
     }
+    public static boolean containsItem(Inventory inv, ItemStack item){
+        for (int i = 0; i < inv.getContents().length; i++){
+            if (inv.getItem(i) == item){
+                return true;
+            }
+        }
+        return false;
+    }
 }
