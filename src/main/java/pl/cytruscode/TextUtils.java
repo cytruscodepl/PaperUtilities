@@ -18,4 +18,11 @@ public class TextUtils {
         }
         return serializedList;
     }
+    public static List<String> replaceInList(List<String> list, String from, String to){
+        List<String> formattedList = new ArrayList<>();
+        for (String element : list){
+            formattedList.add(element.replace(from, to));
+        }
+        return formattedList;
+    }
 }

@@ -29,4 +29,7 @@ public class InventoryUtils {
         }
         return false;
     }
+    public static void removeItem(Inventory inv, ItemStack item){
+        inv.remove(item);
+    }
 }
