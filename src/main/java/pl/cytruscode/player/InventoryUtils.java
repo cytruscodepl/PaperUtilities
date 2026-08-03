@@ -1,6 +1,7 @@
 package pl.cytruscode.player;
 
 
+import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -13,23 +14,25 @@ public class InventoryUtils {
         }
         return true;
     }
-    public static void addItem(Inventory inv, ItemStack item){
-        for (int i = 0; i < inv.getContents().length; i++){
-            if (inv.getItem(i) == null){
+    public static Inventory addItem(Inventory inv, ItemStack item){
+        for (int i = 0; i < inv.getSize(); i++){
+            if (inv.getItem(i) == null || inv.getItem(i).getType() == Material.AIR){
                 inv.setItem(i, item);
-                return;
+                return inv;
             }
         }
+        return inv;
     }
     public static boolean containsItem(Inventory inv, ItemStack item){
-        for (int i = 0; i < inv.getContents().length; i++){
+        for (int i = 0; i < inv.getSize(); i++){
             if (inv.getItem(i) == item){
                 return true;
             }
         }
         return false;
     }
-    public static void removeItem(Inventory inv, ItemStack item){
+    public static Inventory removeItem(Inventory inv, ItemStack item){
         inv.remove(item);
+        return inv;
     }
 }

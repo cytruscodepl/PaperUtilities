@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
+import pl.cytruscode.TextUtils;
 
 import java.util.List;
 
@@ -29,6 +30,13 @@ public class ItemStackUtils {
             ((Damageable) im).setDamage(0);
         }
         itemStack.setItemMeta(im);
+        return itemStack;
+    }
+    public static ItemStack replaceInLore(ItemStack itemStack, String from, String to){
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        List<Component> lore = itemStack.lore();
+        itemMeta.lore(TextUtils.replaceInComponentList(lore, from, to));
+        itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
 

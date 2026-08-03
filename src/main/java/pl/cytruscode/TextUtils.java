@@ -25,4 +25,14 @@ public class TextUtils {
         }
         return formattedList;
     }
+    public static List<Component> replaceInComponentList(List<Component> list, String from, String to){
+        List<Component> formattedList = new ArrayList<>();
+        for (Component element : list){
+            formattedList.add(element.replaceText(config -> config.matchLiteral(from).replacement(to)));
+        }
+        return formattedList;
+    }
+    public static Component replace(Component component, String from, String to){
+        return component.replaceText(config -> config.matchLiteral(from).replacement(to));
+    }
 }
