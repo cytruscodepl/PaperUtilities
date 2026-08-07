@@ -1,6 +1,7 @@
 package pl.cytruscode.item;
 
 import net.kyori.adventure.text.Component;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
@@ -38,6 +39,9 @@ public class ItemStackUtils {
         itemMeta.lore(TextUtils.replaceInComponentList(lore, from, to));
         itemStack.setItemMeta(itemMeta);
         return itemStack;
+    }
+    public static void dropItemStack(ItemStack itemStack, Location location){
+        location.getWorld().dropItemNaturally(location, itemStack);
     }
 
 }
