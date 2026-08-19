@@ -1,13 +1,12 @@
 package pl.cytruscode.player;
 
-import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.time.Duration;
-import java.util.List;
+
 
 public class ChatUtils {
     public static void announce(Component annoucement){
