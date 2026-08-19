@@ -5,6 +5,7 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class TextUtils {
     public static Component deserialize(String msg){
@@ -34,5 +35,12 @@ public class TextUtils {
     }
     public static Component replace(Component component, String from, String to){
         return component.replaceText(config -> config.matchLiteral(from).replacement(to));
+    }
+    public static String replaceMultiple(String string, Map<String, String> replacements){
+	    for (int i = 0; i < replacements.size(); i++){
+		string = string.replace(replacements.keySet().toArray()[i].toString(), replacements.get(replacements.keySet().toArray()[i]));
+	    }
+	    return string;
+
     }
 }
